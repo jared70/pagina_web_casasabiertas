@@ -1,0 +1,394 @@
+/* Reset y variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #3498db;
+    --color-acento: #e74c3c;
+    --color-fondo: #ecf0f1;
+    --color-texto: #34495e;
+    --color-blanco: #ffffff;
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --sombra-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Header - Estilo exacto de la imagen */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: var(--color-blanco);
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.instituto-info h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.lema {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-style: italic;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+    letter-spacing: 1px;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* Sección introductoria - Estilo de la imagen */
+.intro-seccion {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--color-blanco);
+    border-radius: 20px;
+    box-shadow: var(--sombra-suave);
+}
+
+.titulo-destacado {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-destacado::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secundario), var(--color-acento));
+    border-radius: 2px;
+}
+
+.subtitulo {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #666;
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+
+/* Grid de proyectos */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjetas de proyecto - Estilo profesional */
+.proyecto-card {
+    background: var(--color-blanco);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.proyecto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+}
+
+.proyecto-header {
+    background: linear-gradient(135deg, var(--color-primario), #1e3c72);
+    color: var(--color-blanco);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.proyecto-numero {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.proyecto-titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.proyecto-contenido {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-descripcion {
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    flex: 1;
+}
+
+.tecnologia-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f0f7ff;
+    color: var(--color-secundario);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.tecnologia-etiqueta i {
+    font-size: 1rem;
+}
+
+.tecnologia-etiqueta:hover {
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+    border-color: var(--color-secundario);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: var(--color-blanco);
+    padding: 2rem 1rem;
+    margin-top: auto;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.colegio-footer {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Media Queries - Responsive Design */
+@media screen and (max-width: 1024px) {
+    main {
+        padding: 0 1.5rem;
+    }
+    
+    .proyectos-grid {
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .logo-area {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .instituto-info h1 {
+        font-size: 1.8rem;
+    }
+    
+    .intro-seccion {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .proyectos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .proyecto-header {
+        padding: 1.25rem;
+    }
+    
+    .proyecto-titulo {
+        font-size: 1.3rem;
+    }
+    
+    .proyecto-contenido {
+        padding: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+    
+    .intro-seccion {
+        padding: 1.25rem;
+    }
+    
+    .titulo-destacado {
+        font-size: 1.3rem;
+    }
+    
+    .subtitulo {
+        font-size: 0.95rem;
+    }
+    
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .proyecto-card {
+        border-radius: 12px;
+    }
+    
+    .proyecto-header {
+        padding: 1rem;
+    }
+    
+    .proyecto-numero {
+        font-size: 0.75rem;
+    }
+    
+    .proyecto-titulo {
+        font-size: 1.2rem;
+    }
+    
+    .proyecto-contenido {
+        padding: 1rem;
+    }
+    
+    .proyecto-descripcion {
+        font-size: 0.95rem;
+    }
+    
+    .tecnologia-etiqueta {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .colegio-footer {
+        font-size: 1rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+/* Pantallas muy grandes */
+@media screen and (min-width: 1600px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Animaciones y efectos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.proyecto-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.proyecto-card:nth-child(1) { animation-delay: 0.1s; }
+.proyecto-card:nth-child(2) { animation-delay: 0.2s; }
+.proyecto-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .proyecto-card,
+    .logo,
+    .tecnologia-etiqueta {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Estilo para enfoque de teclado */
+.proyecto-card:focus-within {
+    outline: 2px solid var(--color-secundario);
+    outline-offset: 2px;
+}
